@@ -7,7 +7,7 @@ import lombok.Data;
 public class CustomerResponse {
 
     private String name;
-    private AddressResponse adress;
+    private AddressResponse address;
     private String cpf;
     private Boolean isValidCpf;
 }

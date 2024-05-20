@@ -11,4 +11,12 @@ public class CustomerRequest {
     private String cpf;
     @NotBlank
     private String zipCode;
+
+    public @NotBlank String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(@NotBlank String zipCode) {
+        this.zipCode = zipCode;
+    }
 }

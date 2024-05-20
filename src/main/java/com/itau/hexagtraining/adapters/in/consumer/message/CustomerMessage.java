@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CustomerMessage {
+    public String getZipCode() {
+        return zipCode;
+    }
 
     private String id;
     private String name;

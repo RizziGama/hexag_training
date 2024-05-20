@@ -22,7 +22,7 @@ public class UpdateCustomerUseCase implements UpdateCustomerInputPort {
     public void update(Customer customer, String zipCode){
         findCustomerByIdInputPort.find(customer.getId());
         var address = findAddressByZipCodeOutputPort.find(zipCode);
-        customer.setAdress(address);
+        customer.setAddress(address);
         updateCustomerOutputPort.update(customer);
 
 

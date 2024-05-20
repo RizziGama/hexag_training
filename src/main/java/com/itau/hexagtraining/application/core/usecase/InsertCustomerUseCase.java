@@ -4,6 +4,7 @@ import com.itau.hexagtraining.application.core.domain.Customer;
 import com.itau.hexagtraining.application.ports.in.InsertCustomerInputPort;
 import com.itau.hexagtraining.application.ports.out.FindAddressByZipCodeOutputPort;
 import com.itau.hexagtraining.application.ports.out.InsertCustomerOutputPort;
+import com.itau.hexagtraining.application.ports.out.SendCpfForValidationOutputPort;
 
 public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
@@ -11,10 +12,13 @@ public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
     private final InsertCustomerOutputPort insertCustomerOutputPort;
 
+    private final SendCpfForValidationOutputPort sendCpfForValidationOutputPort;
+
     public InsertCustomerUseCase(InsertCustomerOutputPort insertCustomerOutputPort,
-    FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort) {
+                                 FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort, SendCpfForValidationOutputPort sendCpfForValidationOutputPort) {
         this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
         this.insertCustomerOutputPort = insertCustomerOutputPort;
+        this.sendCpfForValidationOutputPort = sendCpfForValidationOutputPort;
     }
 
     @Override
@@ -22,8 +26,9 @@ public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
         var address = findAddressByZipCodeOutputPort.find(zipCode);
 
-        customer.setAdress(address);
+        customer.setAddress(address);
         insertCustomerOutputPort.insert(customer);
+        sendCpfForValidationOutputPort.send(customer.getCpf());
 
 
     }
