@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class CustomerRequest {
+
     @NotBlank
     private String name;
     @NotBlank
@@ -12,11 +13,21 @@ public class CustomerRequest {
     @NotBlank
     private String zipCode;
 
-    public @NotBlank String getZipCode() {
-        return zipCode;
+    public CustomerRequest(String name, String cpf, String zipCode) {
+        this.name = name;
+        this.cpf = cpf;
+        this.zipCode = zipCode;
     }
 
-    public void setZipCode(@NotBlank String zipCode) {
-        this.zipCode = zipCode;
+    public String getName() {
+        return name;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getZipCode() {
+        return zipCode;
     }
 }
