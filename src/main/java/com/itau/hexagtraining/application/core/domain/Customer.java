@@ -12,7 +12,7 @@ public class Customer {
 
     //region Construtores
    public Customer(){
-       this.isValidCpf = false;
+       this.validCpf = true;
    }
 
 

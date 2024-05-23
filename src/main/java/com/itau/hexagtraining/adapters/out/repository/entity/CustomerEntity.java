@@ -19,5 +19,51 @@ public class CustomerEntity {
 
     private String cpf;
 
-    private Boolean isValidCpf;
+    private Boolean validCpf;
+
+
+    public CustomerEntity() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Boolean getValidCpf() {
+        return validCpf;
+    }
+
+    public void setValidCpf(Boolean validCpf) {
+        validCpf = validCpf;
+    }
 }
