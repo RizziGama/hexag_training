@@ -1,6 +1,7 @@
 package com.itau.hexagtraining.adapters.out.repository.entity;
 
 
+import com.itau.hexagtraining.application.core.domain.Address;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,7 +15,7 @@ public class CustomerEntity {
 
     private String name;
 
-    private AddressEntity address;
+    private Address address;
 
     private String cpf;
 

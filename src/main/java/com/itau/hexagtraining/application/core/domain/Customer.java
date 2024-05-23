@@ -7,7 +7,7 @@ public class Customer {
     private String name;
     private Address address;
     private String cpf;
-    private Boolean isValidCpf;
+    private Boolean validCpf;
     //endregion
 
     //region Construtores
@@ -16,12 +16,12 @@ public class Customer {
    }
 
 
-    public Customer(String id, String name, Address address, String cpf, Boolean isValidCpf) {
+    public Customer(String id, String name, Address address, String cpf, Boolean validCpf) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.cpf = cpf;
-        this.isValidCpf = isValidCpf;
+        this.validCpf = validCpf;
     }
     //endregion
 
@@ -58,12 +58,12 @@ public class Customer {
         this.cpf = cpf;
     }
 
-    public Boolean getValidCpf() {
-        return isValidCpf;
+    public Boolean getvalidCpf() {
+        return validCpf;
     }
 
     public void setValidCpf(Boolean validCpf) {
-        isValidCpf = validCpf;
+        validCpf = validCpf;
     }
     //endregion
 }

@@ -5,29 +5,42 @@ import lombok.Data;
 
 @Data
 public class CustomerRequest {
-
-    @NotBlank
-    private String name;
-    @NotBlank
-    private String cpf;
-    @NotBlank
-    private String zipCode;
-
     public CustomerRequest(String name, String cpf, String zipCode) {
         this.name = name;
         this.cpf = cpf;
         this.zipCode = zipCode;
     }
 
-    public String getName() {
+    @NotBlank
+    private String name;
+
+    @NotBlank
+    private String cpf;
+
+    @NotBlank
+    private String zipCode;
+
+    public @NotBlank String getName() {
         return name;
     }
 
-    public String getCpf() {
+    public void setName(@NotBlank String name) {
+        this.name = name;
+    }
+
+    public @NotBlank String getCpf() {
         return cpf;
     }
 
-    public String getZipCode() {
+    public void setCpf(@NotBlank String cpf) {
+        this.cpf = cpf;
+    }
+
+    public @NotBlank String getZipCode() {
         return zipCode;
+    }
+
+    public void setZipCode(@NotBlank String zipCode) {
+        this.zipCode = zipCode;
     }
 }
